@@ -254,7 +254,10 @@ public struct CardFlexAnimationView: View {
         .frame(height: 200)
         .monospaced()
         .contentTransition(.numericText())
-        .background(cardVariant.color.gradient)
+        .background(content: {
+            LinearGradient(gradient: Gradient(colors: [.blue, .blue.opacity(0.7), .white]), startPoint: .leading, endPoint: .trailing)
+        })
+        //.background(cardVariant.color.gradient)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
     
@@ -280,7 +283,10 @@ public struct CardFlexAnimationView: View {
         .frame(height: 200)
         .monospaced()
         .contentTransition(.numericText())
-        .background(cardVariant.color.gradient)
+        .background(content: {
+            LinearGradient(gradient: Gradient(colors: [.blue, .blue.opacity(0.7), .white]), startPoint: .leading, endPoint: .trailing)
+        })
+      //  .background(cardVariant.color.gradient)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         
     }
