@@ -41,7 +41,7 @@ public enum CardVariant {
 //   case master
 //   case visa
 //   case american
-   case cardinfo(name: String, cardIcon: String, color: Color)
+   case cardinfo(name: String, cardIcon: String, color: [Color])
    
    var desription: String {
        switch self {
@@ -67,7 +67,7 @@ public enum CardVariant {
            return cardicon
        }
    }
-   var color: Color {
+   var color: [Color] {
        switch self {
 //       case .master:
 //           return .mint.opacity(0.7)
@@ -202,7 +202,7 @@ public struct CardFlexAnimationView: View {
                 } label: {
                     Text("Save Card Details")
                 }
-                .modifier(CardFlexButtonstyle(tin: Color.black, backgorund: cardVariant.color, isValid: (card.number.isEmpty || card.name.isEmpty || card.month.isEmpty || card.year.isEmpty || card.cvv.isEmpty)))
+                .modifier(CardFlexButtonstyle(tin: Color.black, color: cardVariant.color, isValid: (card.number.isEmpty || card.name.isEmpty || card.month.isEmpty || card.year.isEmpty || card.cvv.isEmpty)))
                 Spacer()
 
             //}
@@ -255,9 +255,8 @@ public struct CardFlexAnimationView: View {
         .monospaced()
         .contentTransition(.numericText())
         .background(content: {
-            LinearGradient(gradient: Gradient(colors: [.blue, .blue.opacity(0.7), .white]), startPoint: .leading, endPoint: .trailing)
+            LinearGradient(gradient: Gradient(colors: cardVariant.color), startPoint: .leading, endPoint: .trailing)
         })
-        //.background(cardVariant.color.gradient)
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
     
@@ -284,9 +283,8 @@ public struct CardFlexAnimationView: View {
         .monospaced()
         .contentTransition(.numericText())
         .background(content: {
-            LinearGradient(gradient: Gradient(colors: [.blue, .blue.opacity(0.7), .white]), startPoint: .leading, endPoint: .trailing)
+            LinearGradient(gradient: Gradient(colors: cardVariant.color), startPoint: .leading, endPoint: .trailing)
         })
-      //  .background(cardVariant.color.gradient)
         .clipShape(RoundedRectangle(cornerRadius: 12))
         
     }

@@ -9,13 +9,15 @@ import SwiftUI
 //MARK: Button Modifier
 struct CardFlexButtonstyle: ViewModifier {
     var tin: Color
-    var backgorund: Color = .clear
+    var color: [Color]
     var isValid: Bool = false
     func body(content: Content) -> some View {
         content
             .foregroundColor(tin)
             .padding()
-            .background(backgorund.gradient)
+            .background(content: {
+                LinearGradient(gradient: Gradient(colors: color), startPoint: .leading, endPoint: .trailing)
+            })
             .clipShape(Capsule())
             .opacity(!isValid ? 1 : 0.5)
             .disabled(isValid)
