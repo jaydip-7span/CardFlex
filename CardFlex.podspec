@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "CardFlex"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
  spec.summary      = "A lightweight library for implementing flexible card layouts in iOS apps."
 
   spec.description  = <<-DESC

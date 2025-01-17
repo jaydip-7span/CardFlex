@@ -91,15 +91,17 @@ public struct CardFlexAnimationView: View {
     //MARK: Private Property
     @FocusState private var activeField: ActiveField?
     @State private var animateField: ActiveField?
+    @State private var buttonBackgroundColor: [Color] = []
    
    
     //MARK: Button Action
    public var onAction:()->()
 
-    public init(card: Binding<Card>, cardChip: String,cardVariant: CardVariant, onAction: @escaping () ->()) {
+    public init(card: Binding<Card>, cardChip: String,cardVariant: CardVariant, buttonBackgColor: [Color] = [.blue] ,onAction: @escaping () ->()) {
         self._card = card
         self.cardChip = cardChip
         self._cardVariant = State(initialValue: cardVariant)
+        self.buttonBackgroundColor = buttonBackgColor
         self.onAction = onAction
     }
    public var body: some View {
@@ -202,7 +204,7 @@ public struct CardFlexAnimationView: View {
                 } label: {
                     Text("Save Card Details")
                 }
-                .modifier(CardFlexButtonstyle(tin: Color.black, color: cardVariant.color, isValid: (card.number.isEmpty || card.name.isEmpty || card.month.isEmpty || card.year.isEmpty || card.cvv.isEmpty)))
+                .modifier(CardFlexButtonstyle(tin: Color.black, color: buttonBackgroundColor, isValid: (card.number.isEmpty || card.name.isEmpty || card.month.isEmpty || card.year.isEmpty || card.cvv.isEmpty)))
                 Spacer()
 
             //}
