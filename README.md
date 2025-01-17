@@ -34,26 +34,7 @@ Include necessary image assets (e.g., chip, card icons).
 
 💻 Usage
 
-Basic Integration
-import SwiftUI
-
-struct ContentView: View {
-    @State private var card = Card()
-    var body: some View {
-        CardFlexAnimationView(
-            card: $card,
-            cardChip: "chipIcon", // Provide your chip asset name
-            cardVariant: .cardinfo(
-                name: "Visa",
-                cardIcon: "visaIcon", // Provide your Visa asset name
-                color: .blue.opacity(0.8)
-            )
-        ) {
-            print("Card Saved: \(card)")
-        }
-        .padding()
-    }
-}
+<img width="372" alt="Screenshot 2025-01-17 at 5 18 10 PM" src="https://github.com/user-attachments/assets/4384c2ac-747a-4aee-bade-1a94e46c2d89" />
 
 
 🎨 Customization
@@ -102,26 +83,9 @@ Add CardFlexAnimationView.swift to your project.
 Include necessary image assets (e.g., chip, card icons).
 💻 Usage
 
-Basic Integration
-import SwiftUI
+<img width="372" alt="Screenshot 2025-01-17 at 5 18 10 PM" src="https://github.com/user-attachments/assets/95a2ce67-b950-489c-9c8d-5e11ee6fa30e" />
 
-struct ContentView: View {
-    @State private var card = Card()
-    var body: some View {
-        CardFlexAnimationView(
-            card: $card,
-            cardChip: "chipIcon", // Provide your chip asset name
-            cardVariant: .cardinfo(
-                name: "Visa",
-                cardIcon: "visaIcon", // Provide your Visa asset name
-                color: .blue.opacity(0.8)
-            )
-        ) {
-            print("Card Saved: \(card)")
-        }
-        .padding()
-    }
-}
+
 🎨 Customization
 
 Card Styles
